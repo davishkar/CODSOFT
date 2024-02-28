@@ -20,7 +20,7 @@ This is a simple personal portfolio website created using HTML and CSS. It serve
 1. Clone the repository to your local machine:
    
 ```
-git clone https://github.com/your-username/personal-portfolio.git
+git clone (https://github.com/davishkar/CODSOFT-TASK-1.git)
 ```
 2. Open the `index.html` file in your web browser to view the website.
 
