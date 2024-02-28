@@ -1,6 +1,6 @@
 # CODSOFT-TASK 1
 LEVEL 1 TASK 1
-# Personal Portfolio Website [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=livechat)](https://www.example.com)
+# Personal Portfolio Website [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=livechat)](https://davishkar.github.io/CODSOFT-TASK-1/)
 
 
 This is a simple personal portfolio website created using HTML and CSS. It serves as a showcase of your skills, projects, and contact information.
