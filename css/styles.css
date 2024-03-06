@@ -187,7 +187,10 @@ ul li:hover {
         display: block;
     }
 }
-
+li::marker {
+    content: '  ';
+    
+}
 /*header style end*/
 /* Home section styles start*/
 .hero {
