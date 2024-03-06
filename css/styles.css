@@ -188,7 +188,7 @@ ul li:hover {
     }
 }
 li::marker {
-    content: '  ';
+    content: ' ';
     
 }
 /*header style end*/
