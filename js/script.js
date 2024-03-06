@@ -77,6 +77,9 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+function toggleMobileMenu(menu) {
+  menu.classList.toggle('open');
+}
 
 // get the popup element
 const popup = document.getElementById("cv-btn");
