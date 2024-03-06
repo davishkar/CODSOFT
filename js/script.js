@@ -1,15 +1,22 @@
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
-
+// Function to handle scroll event
 function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
+  const navbar = document.getElementById("navbar");
+  const logo = document.getElementById("logo");
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  if (scrollTop > 80) {
+    navbar.style.padding = "30px 10px";
+    logo.style.fontSize = "25px";
   } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
+    navbar.style.padding = "80px 10px";
+    logo.style.fontSize = "35px";
   }
 }
+
+// Event listener for scroll
+window.addEventListener("scroll", scrollFunction);
+
+// Typing animation
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
@@ -51,7 +58,9 @@ function erase() {
 document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
-var slideIndex = 1;
+
+// Slide show
+let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
@@ -63,72 +72,25 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) slideIndex = 1;
+  if (n < 1) slideIndex = slides.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
+
+// Function to toggle mobile menu
 function toggleMobileMenu(menu) {
   menu.classList.toggle('open');
 }
-
-// get the popup element
-const popup = document.getElementById("cv-btn");
-
-// get the close button element
-const closeBtn = document.querySelector(".cv-subscribe-close");
-
-// get the subscribe button element
-const subscribeBtn = document.querySelector(".Subscribe_btn a");
-
-// set the cookie name and expiration time
-const cookieName = "YT_popup_closed";
-const expirationDays = 30;
-
-// function to set the cookie with the specified name and expiration time
-function setCookie(cookieName, expirationDays) {
-  const date = new Date();
-  date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
-  const expires = "expires=" + date.toUTCString();
-  document.cookie = cookieName + "=true;" + expires + ";path=/";
-}
-
-// function to check if the cookie with the specified name exists
-function checkCookie(cookieName) {
-  const cookies = document.cookie.split(";");
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.indexOf(cookieName) === 0) {
-      return true;
-    }
-  }
-  return false;
-}
-
-// check if the cookie exists, and hide the popup if it does
-if (checkCookie(cookieName)) {
-  popup.style.display = "none";
-} else {
-  popup.style.display = "flex";
-}
-
-// add event listeners to the close buttons
-closeBtn.addEventListener("click", function() {
-  popup.style.display = "none";
-  setCookie(cookieName, expirationDays);
-});
-
-Btn.addEventListener("click", function() {
-  popup.style.display = "none";
-  setCookie(cookieName, expirationDays);
-});
-
