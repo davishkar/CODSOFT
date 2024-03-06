@@ -189,6 +189,7 @@ ul li:hover {
 }
 li::marker {
     content: ' ';
+     font-size:0px;
     
 }
 /*header style end*/
